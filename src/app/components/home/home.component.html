@@ -1,0 +1,31 @@
+<div class="container mt-2">
+    <h2 class="text-warning text-center" id="heading"><i>Welcome to WordCharCount</i></h2>
+    <div class="row">  
+        <div class="col-md-6 offset-2">
+            <div class="mt-4">
+                <textarea placeholder="Enter your paragraph here..." id="area" #para rows="8" cols="70"></textarea>
+            </div>
+
+            <div class="main">
+                <div class="mt-4">
+                    <button type="button" id="button1" class="btn btn-primary" (click)="getNumberOfWords(para.value)">Get Words Count</button>
+                </div>
+    
+                <div class="mt-4">
+                    <button type="button" id="button2" class="btn btn-warning" (click)="getNumberOfCharacters(para.value)">Get Characters Count</button>
+                </div>
+            </div>
+            <div class="mt-4" *ngIf="isWordButtonPressed">
+                <p>Total words = {{wordCount}}</p>
+            </div>
+            <div class="mt-4" *ngIf="isCharacterButtonPressed">
+                <p>Total characters = {{characterCount}}</p>
+            </div>
+            <div class="mt-4" *ngIf="isEmptyParagraph">
+                <p><b>Please Enter the content to get words/characters count!!!.</b></p>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+
